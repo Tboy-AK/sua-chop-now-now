@@ -1,0 +1,28 @@
+{
+  "name": "sua-chop-now",
+  "version": "1.0.0",
+  "description": "Basic Geolocation based restaurant directory system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV = production index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tboy-AK/sua-chop-now-now.git"
+  },
+  "author": "sua-backend",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tboy-AK/sua-chop-now-now/issues"
+  },
+  "homepage": "https://github.com/Tboy-AK/sua-chop-now-now#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
