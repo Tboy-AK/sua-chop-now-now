@@ -11,6 +11,7 @@ dotenv.config({
 connectDB();
 
 const root = require('./route/rootRoute')
+const restaurants = require('./route/restaurantsRoute')
 
 const app = express()
 
@@ -19,7 +20,10 @@ const PORT = process.env.PORT || 3000
 app.use(express.json())
 
 // Load Routers
-app.use('/', root)
+app.use('/', [
+    root,
+    restaurants
+])
 
 
 
