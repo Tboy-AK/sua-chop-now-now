@@ -9,10 +9,8 @@ exports.getNearbyRestaurants = (req, res) => {
   const longitude = parseFloat(req.query.longitude);
   const latitude = parseFloat(req.query.latitude);
 
-  console.log(distance, longitude, latitude);
-
   // The radius of the earth in meters
-  const earthRad = 6371000;
+  const earthRad = 6371000 * 2;
   const userRadius = distance / earthRad;
 
   RestaurantModel.find({
@@ -27,8 +25,9 @@ exports.getNearbyRestaurants = (req, res) => {
   })
     .then((restaurants) => {
       return res.json({
-        data: restaurants,
         message: 'Jẹun lọ',
+        count: restaurants.length,
+        data: restaurants,
       });
     })
     .catch((err) => res.status(400).send(err.message));
