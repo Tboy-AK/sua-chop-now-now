@@ -10,7 +10,7 @@ exports.getNearbyRestaurants = (req, res) => {
   const latitude = parseFloat(req.query.latitude);
 
   // The radius of the earth in meters
-  const earthRad = 6371000 * 2;
+  const earthRad = 6371000;
   const userRadius = distance / earthRad;
 
   RestaurantModel.find({
