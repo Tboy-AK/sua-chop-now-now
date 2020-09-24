@@ -1,18 +1,24 @@
-const button = document.querySelector('.find');
 
 
+window.onload = function() { 
+
+  getLocation();
+}
 
 
-button.addEventListener('click', displayResults);
+function getLocation() {
+  if (navigator.geolocation) {
 
+    navigator.geolocation.getCurrentPosition(showPosition);
 
+  } else { 
+    console.log("Geolocation is not supported by this browser.");
+  }
+}
 
-function  displayResults(e) {
+function showPosition(position) {
+  const location =
+ `latitude : ${position.coords.latitude} longitude : ${position.coords.longitude}`;
 
-  const distance = document.querySelector('.distance');
-  const address = document.querySelector('.address');
-  
-
-  
-  e.preventDefault();
+ console.log(location);
 }
